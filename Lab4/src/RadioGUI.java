@@ -14,7 +14,7 @@ import javax.swing.JSlider;
 public class RadioGUI extends JFrame {
 
 	private JPanel contentPane;
-	private CarClass car = new CarC();
+	private CarC car = new CarC();
 	String carclass;
 
 
@@ -22,18 +22,9 @@ public class RadioGUI extends JFrame {
 	 * Create the frame.
 	 */
 	public RadioGUI(String string) {
-		this.carclass = string;
-		if (this.carclass.equals("Clase A")) {
-			this.car = new CarA();
-		}
-		if (this.carclass.equals("Clase B")) {
-			this.car = new CarB();
-		}
-		if (this.carclass.equals("Clase C")) {
-			this.car = new CarC();
-		}
 		
 		float emisora = car.getStation();
+		
 		setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
 		setBounds(100, 100, 450, 300);
 		contentPane = new JPanel();
@@ -64,6 +55,9 @@ public class RadioGUI extends JFrame {
 		btnNewButton_2.addActionListener(new ActionListener() {
 			public void actionPerformed(ActionEvent e) {
 				
+				car.setStation(car.getStation() + (float)0.5);
+				float emisora = car.getStation();
+				lblNewLabel_3.setText(String.valueOf(emisora));
 			}
 		});
 		btnNewButton_2.setBounds(22, 68, 117, 29);
