@@ -7,6 +7,8 @@ import javax.swing.border.EmptyBorder;
 import javax.swing.JTabbedPane;
 import javax.swing.JButton;
 import javax.swing.JLabel;
+import javax.swing.JOptionPane;
+
 import java.awt.event.ActionListener;
 import java.awt.event.ActionEvent;
 import javax.swing.JSlider;
@@ -143,7 +145,7 @@ public class RadioGUI extends JFrame {
 		JLabel lblNewLabel_1 = new JLabel("AM");
 		panel_1.add(lblNewLabel_1);
 		
-		JLabel lblNewLabel_4_1 = new JLabel("New label");
+		JLabel lblNewLabel_4_1 = new JLabel(String.valueOf(volumen));
 		lblNewLabel_4_1.setBounds(45, 11, 61, 16);
 		panel_1.add(lblNewLabel_4_1);
 		
@@ -158,7 +160,7 @@ public class RadioGUI extends JFrame {
 				else {
 					car.setVolume(car.getVolume() - (int)1);
 					int volumen = car.getVolume();
-					lblNewLabel_4.setText(String.valueOf(volumen));
+					lblNewLabel_4_1.setText(String.valueOf(volumen));
 				}
 			}
 		});
@@ -170,7 +172,7 @@ public class RadioGUI extends JFrame {
 			public void actionPerformed(ActionEvent e) {
 				car.setVolume(car.getVolume() + (int)1);
 				int volumen = car.getVolume();
-				lblNewLabel_4.setText(String.valueOf(volumen));
+				lblNewLabel_4_1.setText(String.valueOf(volumen));
 			}
 		});
 		btnNewButton_7_1_1.setBounds(121, 6, 33, 29);
@@ -180,23 +182,64 @@ public class RadioGUI extends JFrame {
 		lblNewLabel_2_1.setBounds(196, 6, 33, 16);
 		panel_1.add(lblNewLabel_2_1);
 		
-		JButton btnNewButton_2_1 = new JButton("Anterior");
-		btnNewButton_2_1.setBounds(16, 68, 117, 29);
-		panel_1.add(btnNewButton_2_1);
 		
-		JLabel lblNewLabel_3_1 = new JLabel("New label");
+		
+		JLabel lblNewLabel_3_1 = new JLabel(String.valueOf(emisora));
 		lblNewLabel_3_1.setBounds(176, 73, 61, 16);
 		panel_1.add(lblNewLabel_3_1);
 		
+		JButton btnNewButton_2_1 = new JButton("Anterior");
+		btnNewButton_2_1.addActionListener(new ActionListener() {
+			public void actionPerformed(ActionEvent e) {
+				if (car.getStation() == 0.0) {
+					
+					float emisora = (float)0.0;
+					lblNewLabel_3_1.setText(String.valueOf(emisora));
+					
+				}
+				
+				else {
+					car.setStation(car.getStation() - (float)0.5);
+					float emisora = car.getStation();
+					lblNewLabel_3_1.setText(String.valueOf(emisora));
+				}
+			}
+		});
+		btnNewButton_2_1.setBounds(16, 68, 117, 29);
+		panel_1.add(btnNewButton_2_1);
+		
 		JButton btnNewButton_3_1 = new JButton("Siguiente");
+		btnNewButton_3_1.addActionListener(new ActionListener() {
+			public void actionPerformed(ActionEvent e) {
+				car.setStation(car.getStation() + (float)0.5);
+				float emisora = car.getStation();
+				lblNewLabel_3_1.setText(String.valueOf(emisora));
+			}
+		});
 		btnNewButton_3_1.setBounds(300, 68, 117, 29);
 		panel_1.add(btnNewButton_3_1);
 		
 		JButton btnNewButton_5_1 = new JButton("Guardar emisora");
+		btnNewButton_5_1.addActionListener(new ActionListener() {
+			public void actionPerformed(ActionEvent e) {
+				String station = JOptionPane.showInputDialog("Ingrse el numero de la emisora");
+				car.getStations().add(Float.parseFloat(station));
+				
+			}
+		});
 		btnNewButton_5_1.setBounds(0, 133, 154, 29);
 		panel_1.add(btnNewButton_5_1);
 		
 		JButton btnNewButton_6_1 = new JButton("Cargar emisora");
+		btnNewButton_6_1.addActionListener(new ActionListener() {
+			public void actionPerformed(ActionEvent e) {
+				String station2 = JOptionPane.showInputDialog("Ingrse el numero de la emisora que quieres cargar");
+				car.setStation(Float.parseFloat(station2));
+				float emisora = car.getStation();
+				lblNewLabel_3_1.setText(String.valueOf(emisora));
+				
+			}
+		});
 		btnNewButton_6_1.setBounds(263, 133, 154, 29);
 		panel_1.add(btnNewButton_6_1);
 		
