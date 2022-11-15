@@ -45,7 +45,7 @@ public class MainMenuGUI extends JFrame {
 		JButton btnNewButton_1 = new JButton("Reproduccion");
 		btnNewButton_1.addActionListener(new ActionListener() {
 			public void actionPerformed(ActionEvent e) {
-				
+				Musica reproductor = new Musica();
 			}
 		});
 		btnNewButton_1.setBounds(171, 95, 117, 29);
