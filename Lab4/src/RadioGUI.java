@@ -100,17 +100,41 @@ public class RadioGUI extends JFrame {
 		btnNewButton_6.setBounds(269, 133, 154, 29);
 		panel.add(btnNewButton_6);
 		
-		JButton btnNewButton_7 = new JButton("-");
-		btnNewButton_7.setBounds(6, 6, 33, 29);
-		panel.add(btnNewButton_7);
-		
-		JButton btnNewButton_7_1 = new JButton("+");
-		btnNewButton_7_1.setBounds(127, 6, 33, 29);
-		panel.add(btnNewButton_7_1);
+
 		
 		JLabel lblNewLabel_4 = new JLabel(String.valueOf(volumen));
 		lblNewLabel_4.setBounds(51, 11, 61, 16);
 		panel.add(lblNewLabel_4);
+		
+		JButton btnNewButton_7 = new JButton("-");
+		btnNewButton_7.addActionListener(new ActionListener() {
+			public void actionPerformed(ActionEvent e) {
+				if (car.getVolume() == 0) {
+					int volumen = 0;
+					lblNewLabel_4.setText(String.valueOf(volumen));
+					
+				}
+				else {
+					car.setVolume(car.getVolume() - (int)1);
+					int volumen = car.getVolume();
+					lblNewLabel_4.setText(String.valueOf(volumen));
+				}
+			}
+		});
+		btnNewButton_7.setBounds(6, 6, 33, 29);
+		panel.add(btnNewButton_7);
+		
+		JButton btnNewButton_7_1 = new JButton("+");
+		btnNewButton_7_1.addActionListener(new ActionListener() {
+			public void actionPerformed(ActionEvent e) {
+				car.setVolume(car.getVolume() + (int)1);
+				int volumen = car.getVolume();
+				lblNewLabel_4.setText(String.valueOf(volumen));
+				
+			}
+		});
+		btnNewButton_7_1.setBounds(127, 6, 33, 29);
+		panel.add(btnNewButton_7_1);
 		
 		JPanel panel_1 = new JPanel();
 		panel_1.setLayout(null);

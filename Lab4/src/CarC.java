@@ -14,7 +14,7 @@ public class CarC extends CarClass implements ICarC {
 	public CarC() {
 		station = (float) 0.0;
 		stations = new  ArrayList<Float>();
-		volume = 0;
+		volume = (int)0;
 		
 	}
     public boolean SwitchRadioONOFF() {
