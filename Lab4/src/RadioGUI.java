@@ -92,13 +92,30 @@ public class RadioGUI extends JFrame {
 		JButton btnNewButton_5 = new JButton("Guardar emisora");
 		btnNewButton_5.addActionListener(new ActionListener() {
 			public void actionPerformed(ActionEvent e) {
-				
+				String station = JOptionPane.showInputDialog("Ingrse el numero de la emisora");
+				car.getStations().add(Float.parseFloat(station));
 			}
 		});
 		btnNewButton_5.setBounds(6, 133, 154, 29);
 		panel.add(btnNewButton_5);
 		
 		JButton btnNewButton_6 = new JButton("Cargar emisora");
+		btnNewButton_6.addActionListener(new ActionListener() {
+			public void actionPerformed(ActionEvent e) {
+				
+				String station2 = JOptionPane.showInputDialog("Ingrse el numero de la emisora que quieres cargar");
+				car.setStation(Float.parseFloat(station2));
+				float emisora = car.getStation();
+				
+				if (!car.getStations().contains(emisora)) {
+					JOptionPane.showMessageDialog(null, "La emisora no está guardada");
+				}
+				else {
+					lblNewLabel_3.setText(String.valueOf(emisora));
+				}
+				
+			}
+		});
 		btnNewButton_6.setBounds(269, 133, 154, 29);
 		panel.add(btnNewButton_6);
 		
@@ -233,10 +250,18 @@ public class RadioGUI extends JFrame {
 		JButton btnNewButton_6_1 = new JButton("Cargar emisora");
 		btnNewButton_6_1.addActionListener(new ActionListener() {
 			public void actionPerformed(ActionEvent e) {
+				
 				String station2 = JOptionPane.showInputDialog("Ingrse el numero de la emisora que quieres cargar");
 				car.setStation(Float.parseFloat(station2));
 				float emisora = car.getStation();
-				lblNewLabel_3_1.setText(String.valueOf(emisora));
+				
+				if (!car.getStations().contains(emisora)) {
+					JOptionPane.showMessageDialog(null, "La emisora no está guardada");
+				}
+				else {
+					lblNewLabel_3_1.setText(String.valueOf(emisora));
+				}
+	
 				
 			}
 		});
