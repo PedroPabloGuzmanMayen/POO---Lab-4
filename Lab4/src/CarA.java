@@ -1,4 +1,8 @@
 public class CarA extends CarB implements ICarA {
+	
+	public CarA() {
+		super();
+	}
 
     @Override
     public boolean getSpeakerStatus() {
