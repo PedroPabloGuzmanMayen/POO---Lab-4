@@ -40,6 +40,7 @@ public class TurnONOFFGUI extends JFrame {
 		contentPane.setBorder(new EmptyBorder(5, 5, 5, 5));
 		contentPane.setLayout(null);
 		setContentPane(contentPane);
+		setVisible(true);
 		
 		JLabel lblNewLabel = new JLabel("Mercedez Benz Radio");
 		lblNewLabel.setFont(new Font("Lucida Grande", Font.PLAIN, 25));
