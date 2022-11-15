@@ -17,7 +17,6 @@ public class CarC extends CarClass implements ICarC {
 		volume = 0;
 		
 	}
-    @Override
     public boolean SwitchRadioONOFF() {
         
         return false;
