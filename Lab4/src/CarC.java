@@ -150,7 +150,12 @@ public class CarC extends CarClass implements ICarC {
     @Override
     public String getWeatherForCast() {
     	
-        return null;
+    	int max = 50;
+    	int min = -20;
+    	int temp = (int)(Math.random()*(max-min+1)+min);
+    	String tempstring = String.valueOf(temp);
+    	
+        return "Hoy se prevee una temperatura de: " + tempstring + " grados" ;
     }
 
 	public String getCarClass() {
