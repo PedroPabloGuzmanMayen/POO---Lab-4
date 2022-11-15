@@ -55,7 +55,14 @@ public class RadioGUI extends JFrame {
 		btnNewButton_2.addActionListener(new ActionListener() {
 			public void actionPerformed(ActionEvent e) {
 				
-				car.setStation(car.getStation() + (float)0.5);
+				if (car.getStation() == 0.0) {
+					
+					float emisora = (float)0.0;
+					lblNewLabel_3.setText(String.valueOf(emisora));
+					
+				}
+				
+				car.setStation(car.getStation() - (float)0.5);
 				float emisora = car.getStation();
 				lblNewLabel_3.setText(String.valueOf(emisora));
 			}
@@ -66,6 +73,10 @@ public class RadioGUI extends JFrame {
 		JButton btnNewButton_3 = new JButton("Siguiente");
 		btnNewButton_3.addActionListener(new ActionListener() {
 			public void actionPerformed(ActionEvent e) {
+				
+				car.setStation(car.getStation() + (float)0.5);
+				float emisora = car.getStation();
+				lblNewLabel_3.setText(String.valueOf(emisora));
 				
 			}
 		});
