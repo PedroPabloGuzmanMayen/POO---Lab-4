@@ -1,5 +1,8 @@
 public class CarB extends CarC implements ICarB {
 
+	public CarB() {
+		super();
+	}
     @Override
     public String getLastContact() {
   

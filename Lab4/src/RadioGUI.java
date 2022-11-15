@@ -39,26 +39,6 @@ public class RadioGUI extends JFrame {
 		contentPane.setLayout(null);
 		setContentPane(contentPane);
 		
-		JButton btnNewButton = new JButton("FM");
-		btnNewButton.addActionListener(new ActionListener() {
-			public void actionPerformed(ActionEvent e) {
-				
-				
-				
-			}
-		});
-		btnNewButton.setBounds(76, 23, 117, 29);
-		contentPane.add(btnNewButton);
-		
-		JButton btnNewButton_1 = new JButton("AM");
-		btnNewButton_1.addActionListener(new ActionListener() {
-			public void actionPerformed(ActionEvent e) {
-				
-			}
-		});
-		btnNewButton_1.setBounds(232, 23, 117, 29);
-		contentPane.add(btnNewButton_1);
-		
 		JTabbedPane tabbedPane = new JTabbedPane(JTabbedPane.TOP);
 		tabbedPane.setBounds(0, 52, 450, 214);
 		contentPane.add(tabbedPane);
@@ -177,6 +157,14 @@ public class RadioGUI extends JFrame {
 		});
 		btnNewButton_4.setBounds(0, 0, 78, 23);
 		contentPane.add(btnNewButton_4);
+		
+		JLabel lblNewLabel_6 = new JLabel("Izquierda: FM");
+		lblNewLabel_6.setBounds(75, 22, 137, 16);
+		contentPane.add(lblNewLabel_6);
+		
+		JLabel lblNewLabel_7 = new JLabel("Derecha AM");
+		lblNewLabel_7.setBounds(289, 24, 106, 16);
+		contentPane.add(lblNewLabel_7);
 		setVisible(true);
 		
 	}

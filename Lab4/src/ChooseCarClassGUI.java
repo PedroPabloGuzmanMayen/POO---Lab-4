@@ -36,7 +36,7 @@ public class ChooseCarClassGUI extends JFrame {
 		JButton btnNewButton = new JButton("Clase A");
 		btnNewButton.addActionListener(new ActionListener() {
 			public void actionPerformed(ActionEvent e) {
-				name = "Clase 1";
+				name = "Clase A";
 				MainMenuGUI mainmenu = new MainMenuGUI(name);
 				
 			}
@@ -47,7 +47,7 @@ public class ChooseCarClassGUI extends JFrame {
 		JButton btnNewButton_1 = new JButton("Clase B");
 		btnNewButton_1.addActionListener(new ActionListener() {
 			public void actionPerformed(ActionEvent e) {
-				name = "Clase 2";
+				name = "Clase B";
 				MainMenuGUI mainmenu = new MainMenuGUI(name);
 			}
 		});
@@ -57,7 +57,7 @@ public class ChooseCarClassGUI extends JFrame {
 		JButton btnNewButton_2 = new JButton("Clase C");
 		btnNewButton_2.addActionListener(new ActionListener() {
 			public void actionPerformed(ActionEvent e) {
-				
+				name = "Clase C";
 			}
 		});
 		btnNewButton_2.setBounds(313, 114, 117, 29);
