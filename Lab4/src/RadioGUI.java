@@ -24,6 +24,7 @@ public class RadioGUI extends JFrame {
 	public RadioGUI(String string) {
 		
 		float emisora = car.getStation();
+		int volumen = car.getVolume();
 		
 		setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
 		setBounds(100, 100, 450, 300);
@@ -62,9 +63,12 @@ public class RadioGUI extends JFrame {
 					
 				}
 				
-				car.setStation(car.getStation() - (float)0.5);
-				float emisora = car.getStation();
-				lblNewLabel_3.setText(String.valueOf(emisora));
+				else {
+					car.setStation(car.getStation() - (float)0.5);
+					float emisora = car.getStation();
+					lblNewLabel_3.setText(String.valueOf(emisora));
+				}
+				
 			}
 		});
 		btnNewButton_2.setBounds(22, 68, 117, 29);
@@ -104,7 +108,7 @@ public class RadioGUI extends JFrame {
 		btnNewButton_7_1.setBounds(127, 6, 33, 29);
 		panel.add(btnNewButton_7_1);
 		
-		JLabel lblNewLabel_4 = new JLabel("New label");
+		JLabel lblNewLabel_4 = new JLabel(String.valueOf(volumen));
 		lblNewLabel_4.setBounds(51, 11, 61, 16);
 		panel.add(lblNewLabel_4);
 		
@@ -120,10 +124,31 @@ public class RadioGUI extends JFrame {
 		panel_1.add(lblNewLabel_4_1);
 		
 		JButton btnNewButton_7_2 = new JButton("-");
+		btnNewButton_7_2.addActionListener(new ActionListener() {
+			public void actionPerformed(ActionEvent e) {
+				if (car.getVolume() == 0) {
+					int volumen = 0;
+					lblNewLabel_4.setText(String.valueOf(volumen));
+					
+				}
+				else {
+					car.setVolume(car.getVolume() - (int)1);
+					int volumen = car.getVolume();
+					lblNewLabel_4.setText(String.valueOf(volumen));
+				}
+			}
+		});
 		btnNewButton_7_2.setBounds(0, 6, 33, 29);
 		panel_1.add(btnNewButton_7_2);
 		
 		JButton btnNewButton_7_1_1 = new JButton("+");
+		btnNewButton_7_1_1.addActionListener(new ActionListener() {
+			public void actionPerformed(ActionEvent e) {
+				car.setVolume(car.getVolume() + (int)1);
+				int volumen = car.getVolume();
+				lblNewLabel_4.setText(String.valueOf(volumen));
+			}
+		});
 		btnNewButton_7_1_1.setBounds(121, 6, 33, 29);
 		panel_1.add(btnNewButton_7_1_1);
 		
