@@ -14,12 +14,24 @@ import javax.swing.JSlider;
 public class RadioGUI extends JFrame {
 
 	private JPanel contentPane;
+	private CarClass car;
+	String carclass;
 
 
 	/**
 	 * Create the frame.
 	 */
-	public RadioGUI() {
+	public RadioGUI(String string) {
+		this.carclass = string;
+		if (this.carclass.equals("Clase A")) {
+			this.car = new CarA();
+		}
+		if (this.carclass.equals("Clase B")) {
+			this.car = new CarB();
+		}
+		if (this.carclass.equals("Clase C")) {
+			this.car = new CarC();
+		}
 		setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
 		setBounds(100, 100, 450, 300);
 		contentPane = new JPanel();

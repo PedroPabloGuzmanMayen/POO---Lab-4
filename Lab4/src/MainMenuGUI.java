@@ -13,13 +13,13 @@ import java.awt.event.ActionEvent;
 public class MainMenuGUI extends JFrame {
 
 	private JPanel contentPane;
-	String hola;
+	String cartype;
 	
 	/**
 	 * Create the frame.
 	 */
 	public MainMenuGUI(String string) {
-		this.hola = string;
+		this.cartype = string;
 		setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
 		setBounds(100, 100, 450, 300);
 		contentPane = new JPanel();
@@ -36,7 +36,7 @@ public class MainMenuGUI extends JFrame {
 		JButton btnNewButton = new JButton("Radio");
 		btnNewButton.addActionListener(new ActionListener() {
 			public void actionPerformed(ActionEvent e) {
-				RadioGUI radio = new RadioGUI();
+				RadioGUI radio = new RadioGUI(cartype);
 			}
 		});
 		btnNewButton.setBounds(20, 95, 117, 29);
